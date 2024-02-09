@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://1cnpo66glhil"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_xswva"]
+[ext_resource type="Texture2D" uid="uid://bjnpx3lj77x0y" path="res://spr_hazmat.png" id="2_3g31o"]
+[ext_resource type="Script" path="res://Gun.gd" id="3_q0404"]
+[ext_resource type="Texture2D" uid="uid://0cnpyyo02sri" path="res://spr_ak47.png" id="4_a0i33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7y32"]
+size = Vector2(12, 11)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3l0l"]
+radius = 8.0
+height = 22.0
+
+[node name="World" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_xswva")
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_u7y32")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_3g31o")
+
+[node name="Hitbox" type="Area2D" parent="Player"]
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Player/Hitbox"]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_j3l0l")
+debug_color = Color(0.984314, 0, 0.352941, 0.419608)
+
+[node name="Gun" type="StaticBody2D" parent="Player"]
+script = ExtResource("3_q0404")
+
+[node name="GunSprite" type="Sprite2D" parent="Player/Gun"]
+position = Vector2(4, 7)
+texture = ExtResource("4_a0i33")
