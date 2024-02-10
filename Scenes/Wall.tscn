@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfno4arbec37w"]
+
+[ext_resource type="Texture2D" uid="uid://ch1prjqokqwtb" path="res://Sprites/spr_brickwall.png" id="1_bwcik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7bru"]
+size = Vector2(16, 10)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bwcik")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_l7bru")
