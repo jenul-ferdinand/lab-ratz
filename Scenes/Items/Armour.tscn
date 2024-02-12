@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi7oyjbpdyxlb"]
+
+[ext_resource type="PackedScene" uid="uid://box01kdwa25ok" path="res://Scenes/Components/PickupComponent.tscn" id="1_xhoov"]
+[ext_resource type="Texture2D" uid="uid://bo2xdxp6dgc3n" path="res://Sprites/Pickups/spr_armour.png" id="2_o8jd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tx5"]
+size = Vector2(11, 12)
+
+[node name="Armour" type="Node2D"]
+
+[node name="PickupComponent" parent="." instance=ExtResource("1_xhoov")]
+
+[node name="Sprite2D" type="Sprite2D" parent="PickupComponent"]
+texture = ExtResource("2_o8jd1")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupComponent"]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_f8tx5")

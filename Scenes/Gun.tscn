@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5l31tvq4om7a"]
 
 [ext_resource type="Script" path="res://Scripts/Gun.gd" id="1_75sys"]
-[ext_resource type="Texture2D" uid="uid://0cnpyyo02sri" path="res://Sprites/spr_ak47.png" id="2_bl6jf"]
+[ext_resource type="Texture2D" uid="uid://0cnpyyo02sri" path="res://Sprites/Guns/AK47.png" id="2_bl6jf"]
 
 [node name="Gun" type="StaticBody2D"]
 script = ExtResource("1_75sys")

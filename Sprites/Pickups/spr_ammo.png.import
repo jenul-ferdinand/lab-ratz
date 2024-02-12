@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0cnpyyo02sri"
-path="res://.godot/imported/spr_ak47.png-5cbf87f695c3d201af88c25f6a815a94.ctex"
+uid="uid://in6vdpwq7q01"
+path="res://.godot/imported/spr_ammo.png-625289101bfcc48a45ab5a3b79ac7610.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/spr_ak47.png"
-dest_files=["res://.godot/imported/spr_ak47.png-5cbf87f695c3d201af88c25f6a815a94.ctex"]
+source_file="res://Sprites/Pickups/spr_ammo.png"
+dest_files=["res://.godot/imported/spr_ammo.png-625289101bfcc48a45ab5a3b79ac7610.ctex"]
 
 [params]
 

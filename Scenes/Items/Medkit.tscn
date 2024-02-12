@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7kq5f0mor07u"]
+
+[ext_resource type="PackedScene" uid="uid://box01kdwa25ok" path="res://Scenes/Components/PickupComponent.tscn" id="1_kk5bx"]
+[ext_resource type="Texture2D" uid="uid://c308ssphe3pko" path="res://Sprites/Pickups/spr_medkit.png" id="2_3htxa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5ord"]
+size = Vector2(10, 8)
+
+[node name="Medkit" type="Node2D"]
+
+[node name="PickupComponent" parent="." instance=ExtResource("1_kk5bx")]
+
+[node name="Sprite2D" type="Sprite2D" parent="PickupComponent"]
+texture = ExtResource("2_3htxa")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupComponent"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_n5ord")

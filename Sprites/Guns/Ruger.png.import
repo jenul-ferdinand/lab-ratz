@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjnpx3lj77x0y"
-path="res://.godot/imported/spr_hazmat.png-98d30355370233ea8e712ce9176919c5.ctex"
+uid="uid://bvx2be317uals"
+path="res://.godot/imported/Ruger.png-c0fb1d004034c6740979fc58b4ca457b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/spr_hazmat.png"
-dest_files=["res://.godot/imported/spr_hazmat.png-98d30355370233ea8e712ce9176919c5.ctex"]
+source_file="res://Sprites/Guns/Ruger.png"
+dest_files=["res://.godot/imported/Ruger.png-c0fb1d004034c6740979fc58b4ca457b.ctex"]
 
 [params]
 

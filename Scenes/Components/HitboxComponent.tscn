@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ektd51baumvu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3l0l"]
+radius = 8.0
+height = 22.0
+
+[node name="HitboxComponent" type="Area2D"]
+position = Vector2(0, -15.89)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_j3l0l")
+debug_color = Color(0.984314, 0, 0.352941, 0.419608)
