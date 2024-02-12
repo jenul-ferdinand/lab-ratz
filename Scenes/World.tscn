@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://1cnpo66glhil"]
+[gd_scene load_steps=10 format=3 uid="uid://1cnpo66glhil"]
 
 [ext_resource type="Texture2D" uid="uid://bkenlqvfqjaxr" path="res://Sprites/spr_debug_floor.png" id="1_fu7e7"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="2_h0n51"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="3_m3143"]
 [ext_resource type="Texture2D" uid="uid://bjnpx3lj77x0y" path="res://Sprites/spr_hazmat.png" id="4_oid07"]
-[ext_resource type="Script" path="res://Scripts/Gun.gd" id="5_jvlux"]
-[ext_resource type="Texture2D" uid="uid://0cnpyyo02sri" path="res://Sprites/spr_ak47.png" id="6_rvcyd"]
+[ext_resource type="PackedScene" uid="uid://c5l31tvq4om7a" path="res://Scenes/Gun.tscn" id="5_1f4h0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t47xf"]
 texture = ExtResource("1_fu7e7")
@@ -39,6 +38,7 @@ position_smoothing_enabled = true
 script = ExtResource("2_h0n51")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(312, 134)
 script = ExtResource("3_m3143")
 
 [node name="Collision" type="CollisionShape2D" parent="Player"]
@@ -58,10 +58,4 @@ position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_j3l0l")
 debug_color = Color(0.984314, 0, 0.352941, 0.419608)
 
-[node name="Gun" type="StaticBody2D" parent="Player"]
-script = ExtResource("5_jvlux")
-
-[node name="Sprite" type="Sprite2D" parent="Player/Gun"]
-texture_filter = 1
-position = Vector2(4, -7)
-texture = ExtResource("6_rvcyd")
+[node name="Gun" parent="Player" instance=ExtResource("5_1f4h0")]

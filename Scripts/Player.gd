@@ -19,6 +19,11 @@ func _physics_process(delta):
 		motion.x -= 1
 	if Input.is_action_pressed("right"):
 		motion.x += 1
+		
+	if motion.x < 0:
+		$Sprite.flip_h = true;
+	else:
+		$Sprite.flip_h = false;
 	
 	# Normalise movement (same speed every direction)
 	motion = motion.normalized()
