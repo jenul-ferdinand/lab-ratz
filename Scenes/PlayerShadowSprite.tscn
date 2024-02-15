@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://duxkhs4rmiy1f"]
+
+[ext_resource type="Texture2D" uid="uid://bijdj8u2fjien" path="res://Sprites/spr_shadow.png" id="1_40yn1"]
+
+[node name="PlayerShadowSprite" type="Sprite2D"]
+position = Vector2(0, -12)
+texture = ExtResource("1_40yn1")

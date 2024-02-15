@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://2au86i2vxlm3"]
+
+[ext_resource type="Texture2D" uid="uid://bijdj8u2fjien" path="res://Sprites/spr_shadow.png" id="1_ngcmf"]
+
+[node name="PickupShadowSprite" type="Sprite2D"]
+position = Vector2(0, -6)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_ngcmf")

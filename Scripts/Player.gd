@@ -18,7 +18,8 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		motion.x += 1
 		$Sprite.flip_h = false;
-		
+	
+	# Animation
 	if motion != Vector2(0, 0):
 		$Sprite.play("running")
 	else:

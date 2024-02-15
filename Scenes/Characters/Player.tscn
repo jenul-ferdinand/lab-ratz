@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://q3p5xsk7hgk2"]
+[gd_scene load_steps=11 format=3 uid="uid://q3p5xsk7hgk2"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_paygb"]
+[ext_resource type="PackedScene" uid="uid://duxkhs4rmiy1f" path="res://Scenes/PlayerShadowSprite.tscn" id="2_84o6d"]
 [ext_resource type="Texture2D" uid="uid://8jlrq4dreap6" path="res://Sprites/Characters/spr_hazmat_run_strip3.png" id="2_noqbu"]
 [ext_resource type="PackedScene" uid="uid://c5l31tvq4om7a" path="res://Scenes/Gun.tscn" id="4_h3m1y"]
 
@@ -42,6 +43,8 @@ size = Vector2(15, 23)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(312, 134)
 script = ExtResource("1_paygb")
+
+[node name="PlayerShadowSprite" parent="." instance=ExtResource("2_84o6d")]
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5.435)

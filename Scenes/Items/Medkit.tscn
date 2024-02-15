@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7kq5f0mor07u"]
+[gd_scene load_steps=5 format=3 uid="uid://c7kq5f0mor07u"]
 
+[ext_resource type="PackedScene" uid="uid://2au86i2vxlm3" path="res://Scenes/PickupShadowSprite.tscn" id="1_5n81r"]
 [ext_resource type="PackedScene" uid="uid://box01kdwa25ok" path="res://Scenes/Components/PickupComponent.tscn" id="1_kk5bx"]
 [ext_resource type="Texture2D" uid="uid://c308ssphe3pko" path="res://Sprites/Pickups/spr_medkit.png" id="2_3htxa"]
 
@@ -7,6 +8,8 @@
 size = Vector2(10, 8)
 
 [node name="Medkit" type="Node2D"]
+
+[node name="PickupShadowSprite" parent="." instance=ExtResource("1_5n81r")]
 
 [node name="PickupComponent" parent="." instance=ExtResource("1_kk5bx")]
 

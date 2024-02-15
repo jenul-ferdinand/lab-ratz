@@ -20,7 +20,10 @@ func _ready():
 	# Prevent the RayCast2D from colliding with our own CollisionShape2D
 	ray_cast_2d.add_exception(get_parent().get_node("CollisionShape2D"))
 	
-func _physics_process(delta):
-	var direction = target.global_position - global_position
+	# NOTE: The reason why the raycast doesn't collide with the player's collision
+	# 		Is because the players CollisionShape2D is not a Layer 2 collision.
+	#		THE RAYCAST WILL ONLY COLLIDE WITH COLLISIONS IN LAYER 2
 	
-	ray_cast_2d.target_position = direction;
+func _physics_process(delta):
+	# Set the RayCast2D's target position as the target's global position
+	ray_cast_2d.target_position = target.global_position - global_position;
