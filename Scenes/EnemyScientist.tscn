@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dscnr7sejdwuc"]
+
+[ext_resource type="Texture2D" uid="uid://cbhtxugftwpd7" path="res://Sprites/Characters/spr_enemy_scientist_run_strip3.png" id="1_1eltx"]
+[ext_resource type="Script" path="res://Scripts/EnemyScientist.gd" id="1_6ceyh"]
+[ext_resource type="PackedScene" uid="uid://ektd51baumvu" path="res://Scenes/Components/HitboxComponent.tscn" id="2_cas7o"]
+[ext_resource type="Script" path="res://Scripts/State Machines/FiniteStateMachine.gd" id="3_182in"]
+[ext_resource type="Script" path="res://Scripts/State Machines/EnemyChaseState.gd" id="4_c5a81"]
+[ext_resource type="Script" path="res://Scripts/State Machines/EnemyWanderState.gd" id="5_lf5me"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn1k0"]
+atlas = ExtResource("1_1eltx")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qimn4"]
+atlas = ExtResource("1_1eltx")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwdyo"]
+atlas = ExtResource("1_1eltx")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pko5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn1k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qimn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwdyo")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmn3m"]
+size = Vector2(12, 9)
+
+[node name="EnemyScientist" type="CharacterBody2D"]
+script = ExtResource("1_6ceyh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pko5h")
+animation = &"running"
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_kmn3m")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_cas7o")]
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("3_182in")
+state = NodePath("EnemyWanderState")
+
+[node name="EnemyWanderState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "vision_cast")]
+script = ExtResource("5_lf5me")
+actor = NodePath("../..")
+animator = NodePath("../../AnimatedSprite2D")
+vision_cast = NodePath("../../RayCast2D")
+
+[node name="EnemyChaseState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "vision_cast")]
+script = ExtResource("4_c5a81")
+actor = NodePath("../..")
+animator = NodePath("../../AnimatedSprite2D")
+vision_cast = NodePath("../../RayCast2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -12)
+target_position = Vector2(0, 16)
+collision_mask = 2
+hit_from_inside = true

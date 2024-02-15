@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://1cnpo66glhil"]
+[gd_scene load_steps=12 format=3 uid="uid://1cnpo66glhil"]
 
 [ext_resource type="Texture2D" uid="uid://bkenlqvfqjaxr" path="res://Sprites/spr_debug_floor.png" id="1_fu7e7"]
 [ext_resource type="Script" path="res://Scenes/World.gd" id="1_jt5to"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="2_h0n51"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="3_m3143"]
-[ext_resource type="Texture2D" uid="uid://bjnpx3lj77x0y" path="res://Sprites/Characters/spr_hazmat.png" id="4_oid07"]
-[ext_resource type="PackedScene" uid="uid://c5l31tvq4om7a" path="res://Scenes/Gun.tscn" id="5_1f4h0"]
-[ext_resource type="PackedScene" uid="uid://ektd51baumvu" path="res://Scenes/Components/HitboxComponent.tscn" id="6_srorj"]
+[ext_resource type="PackedScene" uid="uid://q3p5xsk7hgk2" path="res://Scenes/Player.tscn" id="4_djfef"]
+[ext_resource type="PackedScene" uid="uid://dscnr7sejdwuc" path="res://Scenes/EnemyScientist.tscn" id="8_q8s4l"]
 [ext_resource type="PackedScene" uid="uid://c7kq5f0mor07u" path="res://Scenes/Items/Medkit.tscn" id="8_xvq7r"]
 [ext_resource type="PackedScene" uid="uid://b3w03hc4ait55" path="res://Scenes/Items/Ammobox.tscn" id="9_groxu"]
 [ext_resource type="PackedScene" uid="uid://bi7oyjbpdyxlb" path="res://Scenes/Items/Armour.tscn" id="10_uf5uk"]
@@ -23,10 +21,11 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_t47xf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7y32"]
-size = Vector2(12, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi5ba"]
+size = Vector2(148, 22)
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_jt5to")
 
 [node name="Ground" type="TileMap" parent="."]
@@ -39,22 +38,7 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 script = ExtResource("2_h0n51")
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(312, 134)
-script = ExtResource("3_m3143")
-
-[node name="Collision" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -5.435)
-shape = SubResource("RectangleShape2D_u7y32")
-
-[node name="Sprite" type="Sprite2D" parent="Player"]
-texture_filter = 1
-texture = ExtResource("4_oid07")
-offset = Vector2(0, -16)
-
-[node name="HitboxComponent" parent="Player" instance=ExtResource("6_srorj")]
-
-[node name="Gun" parent="Player" instance=ExtResource("5_1f4h0")]
+[node name="Player" parent="." instance=ExtResource("4_djfef")]
 
 [node name="Medkit" parent="." instance=ExtResource("8_xvq7r")]
 position = Vector2(296, 78)
@@ -64,3 +48,14 @@ position = Vector2(328, 79)
 
 [node name="Armour" parent="." instance=ExtResource("10_uf5uk")]
 position = Vector2(361, 79)
+
+[node name="EnemyScientist" parent="." instance=ExtResource("8_q8s4l")]
+position = Vector2(375, 153)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(368, 205)
+shape = SubResource("RectangleShape2D_pi5ba")

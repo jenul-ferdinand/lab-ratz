@@ -18,6 +18,11 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		motion.x += 1
 		$Sprite.flip_h = false;
+		
+	if motion != Vector2(0, 0):
+		$Sprite.play("running")
+	else:
+		$Sprite.stop()
 	
 	# Normalise movement (same speed every direction)
 	motion = motion.normalized()

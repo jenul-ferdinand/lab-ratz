@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://q3p5xsk7hgk2"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_paygb"]
+[ext_resource type="Texture2D" uid="uid://8jlrq4dreap6" path="res://Sprites/Characters/spr_hazmat_run_strip3.png" id="2_noqbu"]
+[ext_resource type="PackedScene" uid="uid://c5l31tvq4om7a" path="res://Scenes/Gun.tscn" id="4_h3m1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7y32"]
+size = Vector2(12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mwvy"]
+atlas = ExtResource("2_noqbu")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaed5"]
+atlas = ExtResource("2_noqbu")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq5k4"]
+atlas = ExtResource("2_noqbu")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ratmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mwvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaed5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq5k4")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r241"]
+size = Vector2(15, 23)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(312, 134)
+script = ExtResource("1_paygb")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.435)
+shape = SubResource("RectangleShape2D_u7y32")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ratmg")
+animation = &"running"
+speed_scale = 1.5
+offset = Vector2(0, -16)
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+position = Vector2(0, -15.89)
+
+[node name="Collision" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0.5, 5.39)
+shape = SubResource("RectangleShape2D_4r241")
+debug_color = Color(0.984314, 0, 0.352941, 0.419608)
+
+[node name="Gun" parent="." instance=ExtResource("4_h3m1y")]
