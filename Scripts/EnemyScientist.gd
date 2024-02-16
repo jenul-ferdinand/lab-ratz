@@ -1,6 +1,7 @@
 class_name Enemy
 extends CharacterBody2D
 
+# Properties
 @export var max_speed = 40.0
 @export var acceleration = 70.0
 
@@ -10,6 +11,9 @@ extends CharacterBody2D
 @onready var enemy_wander_state = $FiniteStateMachine/EnemyWanderState as EnemyWanderState
 @onready var enemy_chase_state = $FiniteStateMachine/EnemyChaseState as EnemyChaseState
 
+
+
+# FUNCTION: Called when the node enters the scene
 func _ready():
 	# When the wander state finds the player, change to the chase state
 	enemy_wander_state.found_player.connect(fsm.change_state.bind(enemy_chase_state))
@@ -23,7 +27,11 @@ func _ready():
 	# NOTE: The reason why the raycast doesn't collide with the player's collision
 	# 		Is because the players CollisionShape2D is not a Layer 2 collision.
 	#		THE RAYCAST WILL ONLY COLLIDE WITH COLLISIONS IN LAYER 2
-	
-func _physics_process(delta):
-	# Set the RayCast2D's target position as the target's global position
-	ray_cast_2d.target_position = target.global_position - global_position;
+
+
+
+# FUNCTION: Called every frame
+func _physics_process(_delta):
+	if target != null:
+		# Set the RayCast2D's target position as the target's global position
+		ray_cast_2d.target_position = target.global_position - global_position

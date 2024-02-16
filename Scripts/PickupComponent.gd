@@ -8,21 +8,23 @@ signal picked_up
 # Item resource
 @export var item : Item
 
-# This function is called when the node enters the scene
+
+
+# FUNCTION: Called when the node enters the scene
 func _ready():
 	# Assign the Item's pickup sound to the AudioStreamPlayer2D
 	audio_stream.stream = item.pickup_sound
 
 
 
-# This function is called every frame
+# FUNCTION: Called every frame
 func _process(delta):
 	# Wave effect
 	position.y = Wave.wave_with_delta(position.y - 65, position.y + 65, 1, 0, delta)
 	
 
 
-# Another physics body enters the area of the PickupComponent
+# FUNCTION: Another physics body enters the area of the PickupComponent
 func _on_body_entered(body):
 	
 	# Check if the entering body is in the "player" group
@@ -36,4 +38,3 @@ func _on_body_entered(body):
 		
 		# Remove the Item parent
 		get_parent().queue_free()
-

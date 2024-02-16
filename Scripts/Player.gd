@@ -3,6 +3,16 @@ extends CharacterBody2D
 # Normal moving speed
 var movespeed = 68;
 
+
+
+# FUNCTION: Called when the node enters the scene
+func _ready():
+	# Add to the player group
+	self.add_to_group("player")
+
+
+
+# FUNCTION: Called every frame
 func _physics_process(_delta):
 	# Declare motion vector
 	var motion = Vector2()
@@ -31,4 +41,3 @@ func _physics_process(_delta):
 	velocity = motion * movespeed
 	# Allow for move and slide
 	move_and_slide()
-

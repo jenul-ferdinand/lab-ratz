@@ -1,15 +1,23 @@
 class_name EnemyWanderState
 extends State
 
+# Properties
 @export var actor: Enemy
 @export var animator: AnimatedSprite2D
 @export var vision_cast: RayCast2D
 
+# Signal for when actor finds the player
 signal found_player
 
+
+
+# FUNCTION: Called when node enters the scene
 func _ready():
 	set_physics_process(false)
 
+
+
+# FUNCTION: Actor enters state
 func _enter_state() -> void:
 	set_physics_process(true)
 	
@@ -20,9 +28,15 @@ func _enter_state() -> void:
 	if actor.velocity == Vector2.ZERO:
 		actor.velocity = Vector2.RIGHT.rotated(randf_range(0, TAU)) * actor.max_speed
 
+
+
+# FUNCTION: When the actor exits the state
 func _exit_state() -> void: 
 	set_physics_process(false)
-	
+
+
+
+# FUNCTION: Called every frame
 func _physics_process(delta):
 	# Flipping sprite based on sign of velocity x
 	animator.scale.x = sign(actor.velocity.x)

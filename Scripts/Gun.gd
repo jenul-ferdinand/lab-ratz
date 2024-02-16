@@ -1,8 +1,14 @@
 extends StaticBody2D
 
+
+
+# FUNCTION: Called when the node enters the scene
 func _ready():
 	pass
 
+
+
+# FUNCTION: Called every frame
 func _process(_delta):
 	# Rotating gun based on mouse position
 	var mouse_position : Vector2 = get_local_mouse_position()
@@ -22,6 +28,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
+
+
+
+# FUNCTION: Shooting bullets
 func shoot():
 	# Preload the bullet scene
 	const BULLET = preload("res://Scenes/Bullet.tscn")

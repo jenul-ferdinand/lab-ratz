@@ -1,23 +1,37 @@
 class_name EnemyChaseState
 extends State
 
+# Properties
 @export var actor: Enemy
 @export var animator: AnimatedSprite2D
 @export var vision_cast: RayCast2D
 
+# Signal for when the actor loses the player
 signal lost_player
 
+
+
+# FUNCTION: When the node enters the scene
 func _ready() -> void: 
 	set_physics_process(false)
-	
+
+
+
+# FUNCTION: When the actor enters the state
 func _enter_state() -> void:
 	set_physics_process(true)
 	
 	animator.play("running")
-	
+
+
+
+# FUNCTION: When the actor exits the state
 func _exit_state() -> void:
 	set_physics_process(false)
-	
+
+
+
+# FUNCTION: Called every frame
 func _physics_process(delta) -> void:
 	# Flipping sprite based on sign of velocity x
 	animator.scale.x = sign(actor.velocity.x)
@@ -31,4 +45,3 @@ func _physics_process(delta) -> void:
 	# If we can't see the player, emit lost_player signal
 	if vision_cast.is_colliding():
 		lost_player.emit()
-	

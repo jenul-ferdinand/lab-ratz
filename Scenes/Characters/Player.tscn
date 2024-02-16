@@ -40,7 +40,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r241"]
 size = Vector2(15, 23)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(312, 134)
 script = ExtResource("1_paygb")
 
