@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://ca1fek0rcekni"]
+
+[ext_resource type="Script" path="res://Scenes/Resources/Item.gd" id="1_00f5d"]
+[ext_resource type="Texture2D" uid="uid://bo2xdxp6dgc3n" path="res://Assets/Sprites/Pickups/spr_armour.png" id="1_ndon2"]
+[ext_resource type="AudioStream" uid="uid://bpu7wyr3c8sq0" path="res://Assets/Sounds/PickupItem.wav" id="3_7da7t"]
+
+[resource]
+script = ExtResource("1_00f5d")
+icon = ExtResource("1_ndon2")
+name = "Armour"
+pickup_sound = ExtResource("3_7da7t")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_paygb"]
 [ext_resource type="PackedScene" uid="uid://duxkhs4rmiy1f" path="res://Scenes/PlayerShadowSprite.tscn" id="2_84o6d"]
-[ext_resource type="Texture2D" uid="uid://8jlrq4dreap6" path="res://Sprites/Characters/spr_hazmat_run_strip3.png" id="2_noqbu"]
+[ext_resource type="Texture2D" uid="uid://8jlrq4dreap6" path="res://Assets/Sprites/Characters/spr_hazmat_run_strip3.png" id="2_noqbu"]
 [ext_resource type="PackedScene" uid="uid://c5l31tvq4om7a" path="res://Scenes/Gun.tscn" id="4_h3m1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7y32"]

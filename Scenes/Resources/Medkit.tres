@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bxa8hk70jsrtq"]
+
+[ext_resource type="Texture2D" uid="uid://c308ssphe3pko" path="res://Assets/Sprites/Pickups/spr_medkit.png" id="1_xuw78"]
+[ext_resource type="Script" path="res://Scenes/Resources/Item.gd" id="2_t8pxl"]
+[ext_resource type="AudioStream" uid="uid://bpu7wyr3c8sq0" path="res://Assets/Sounds/PickupItem.wav" id="3_5sjkn"]
+
+[resource]
+script = ExtResource("2_t8pxl")
+icon = ExtResource("1_xuw78")
+name = "Medkit"
+pickup_sound = ExtResource("3_5sjkn")

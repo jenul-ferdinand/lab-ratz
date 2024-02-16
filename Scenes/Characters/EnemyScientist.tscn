@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dscnr7sejdwuc"]
 
-[ext_resource type="Texture2D" uid="uid://cbhtxugftwpd7" path="res://Sprites/Characters/spr_enemy_scientist_run_strip3.png" id="1_1eltx"]
+[ext_resource type="Texture2D" uid="uid://cbhtxugftwpd7" path="res://Assets/Sprites/Characters/spr_enemy_scientist_run_strip3.png" id="1_1eltx"]
 [ext_resource type="Script" path="res://Scripts/EnemyScientist.gd" id="1_6ceyh"]
 [ext_resource type="PackedScene" uid="uid://ektd51baumvu" path="res://Scenes/Components/HitboxComponent.tscn" id="2_cas7o"]
 [ext_resource type="PackedScene" uid="uid://duxkhs4rmiy1f" path="res://Scenes/PlayerShadowSprite.tscn" id="2_u5pp4"]

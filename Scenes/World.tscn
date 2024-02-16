@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://1cnpo66glhil"]
 
-[ext_resource type="Texture2D" uid="uid://bkenlqvfqjaxr" path="res://Sprites/spr_debug_floor.png" id="1_fu7e7"]
+[ext_resource type="Texture2D" uid="uid://bkenlqvfqjaxr" path="res://Assets/Sprites/spr_debug_floor.png" id="1_fu7e7"]
 [ext_resource type="Script" path="res://Scenes/World.gd" id="1_jt5to"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="2_h0n51"]
 [ext_resource type="PackedScene" uid="uid://q3p5xsk7hgk2" path="res://Scenes/Characters/Player.tscn" id="4_djfef"]
@@ -40,17 +40,8 @@ script = ExtResource("2_h0n51")
 
 [node name="Player" parent="." instance=ExtResource("4_djfef")]
 
-[node name="Medkit" parent="." instance=ExtResource("8_xvq7r")]
-position = Vector2(296, 78)
-
-[node name="Ammobox" parent="." instance=ExtResource("9_groxu")]
-position = Vector2(328, 79)
-
-[node name="Armour" parent="." instance=ExtResource("10_uf5uk")]
-position = Vector2(361, 79)
-
 [node name="EnemyScientist" parent="." instance=ExtResource("8_q8s4l")]
-position = Vector2(375, 153)
+position = Vector2(433, 127)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 3
@@ -59,3 +50,12 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(368, 205)
 shape = SubResource("RectangleShape2D_pi5ba")
+
+[node name="Medkit" parent="." instance=ExtResource("8_xvq7r")]
+position = Vector2(296, 78)
+
+[node name="Armour" parent="." instance=ExtResource("10_uf5uk")]
+position = Vector2(327, 79)
+
+[node name="Ammobox" parent="." instance=ExtResource("9_groxu")]
+position = Vector2(359, 79)

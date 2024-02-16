@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bw0koslq5m4g4"]
+
+[ext_resource type="Texture2D" uid="uid://in6vdpwq7q01" path="res://Assets/Sprites/Pickups/spr_ammo.png" id="1_c4s1x"]
+[ext_resource type="Script" path="res://Scenes/Resources/Item.gd" id="1_uidga"]
+[ext_resource type="AudioStream" uid="uid://bpu7wyr3c8sq0" path="res://Assets/Sounds/PickupItem.wav" id="3_g0vcv"]
+
+[resource]
+script = ExtResource("1_uidga")
+icon = ExtResource("1_c4s1x")
+name = "Ammobox"
+pickup_sound = ExtResource("3_g0vcv")

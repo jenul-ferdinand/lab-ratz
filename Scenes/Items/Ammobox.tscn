@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3w03hc4ait55"]
+[gd_scene load_steps=6 format=3 uid="uid://b3w03hc4ait55"]
 
 [ext_resource type="PackedScene" uid="uid://2au86i2vxlm3" path="res://Scenes/PickupShadowSprite.tscn" id="1_25bwd"]
 [ext_resource type="PackedScene" uid="uid://box01kdwa25ok" path="res://Scenes/Components/PickupComponent.tscn" id="1_v1pde"]
-[ext_resource type="Texture2D" uid="uid://in6vdpwq7q01" path="res://Sprites/Pickups/spr_ammo.png" id="2_5sm4x"]
+[ext_resource type="Texture2D" uid="uid://in6vdpwq7q01" path="res://Assets/Sprites/Pickups/spr_ammo.png" id="2_5sm4x"]
+[ext_resource type="Resource" uid="uid://bw0koslq5m4g4" path="res://Scenes/Resources/Ammobox.tres" id="3_mdlsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucul8"]
 size = Vector2(12, 9)
@@ -12,6 +13,7 @@ size = Vector2(12, 9)
 [node name="PickupShadowSprite" parent="." instance=ExtResource("1_25bwd")]
 
 [node name="PickupComponent" parent="." instance=ExtResource("1_v1pde")]
+item = ExtResource("3_mdlsn")
 
 [node name="Sprite2D" type="Sprite2D" parent="PickupComponent"]
 texture = ExtResource("2_5sm4x")
