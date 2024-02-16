@@ -11,6 +11,7 @@ class_name Item
 @export var armour_increase: int = 0
 @export var ammo_increase: int = 0
 
+# Function to apply the item effects to the player
 func apply_effects(player: CharacterBody2D):
 	# player.increase_health(health_increase)
 	# player.increase_armour(armour_increase)

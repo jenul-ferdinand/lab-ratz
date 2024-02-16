@@ -13,6 +13,8 @@ config_version=5
 config/name="lab-ratz-godot"
 run/main_scene="res://Scenes/World.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://Assets/Icon/icon.png"
+config/windows_native_icon="res://Assets/Icon/icon.ico"
 
 [display]
 

@@ -31,17 +31,9 @@ func _on_body_entered(body):
 		audio_stream.play()
 		await audio_stream.finished
 		
-		# Call the _on_item_picked_up function, passing the player as argument
-		_on_item_picked_up(body)
+		# Apply the item effects
+		item.apply_effects(body)
 		
 		# Remove the Item parent
 		get_parent().queue_free()
 
-
-
-# Item is picked up by the player
-func _on_item_picked_up(player):
-	print("Picked up item by player:", player)
-	
-	
-	
