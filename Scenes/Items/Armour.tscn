@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bijdj8u2fjien" path="res://Assets/Sprites/spr_shadow.png" id="1_8w5yy"]
 [ext_resource type="PackedScene" uid="uid://box01kdwa25ok" path="res://Scenes/Components/PickupComponent.tscn" id="1_xhoov"]
 [ext_resource type="Texture2D" uid="uid://bo2xdxp6dgc3n" path="res://Assets/Sprites/Pickups/spr_armour.png" id="2_o8jd1"]
-[ext_resource type="Resource" uid="uid://ca1fek0rcekni" path="res://Scenes/Resources/Armour.tres" id="3_exyvk"]
+[ext_resource type="Resource" uid="uid://ca1fek0rcekni" path="res://Scenes/Items/Armour.tres" id="3_fvfxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8tx5"]
 size = Vector2(11, 12)
@@ -16,7 +16,7 @@ scale = Vector2(0.6875, 0.75)
 texture = ExtResource("1_8w5yy")
 
 [node name="PickupComponent" parent="." instance=ExtResource("1_xhoov")]
-item = ExtResource("3_exyvk")
+item = ExtResource("3_fvfxj")
 
 [node name="Sprite2D" type="Sprite2D" parent="PickupComponent"]
 texture = ExtResource("2_o8jd1")

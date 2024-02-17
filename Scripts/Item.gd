@@ -13,7 +13,7 @@ class_name Item
 
 # Function to apply the item effects to the player
 func apply_effects(player: CharacterBody2D):
-	# player.increase_health(health_increase)
+	player.increase_health(health_increase)
 	# player.increase_armour(armour_increase)
 	# player.increase_ammo(ammo_increase)
 	pass

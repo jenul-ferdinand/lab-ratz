@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2au86i2vxlm3" path="res://Scenes/PickupShadowSprite.tscn" id="1_5n81r"]
 [ext_resource type="PackedScene" uid="uid://box01kdwa25ok" path="res://Scenes/Components/PickupComponent.tscn" id="1_kk5bx"]
 [ext_resource type="Texture2D" uid="uid://c308ssphe3pko" path="res://Assets/Sprites/Pickups/spr_medkit.png" id="2_3htxa"]
-[ext_resource type="Resource" uid="uid://bxa8hk70jsrtq" path="res://Scenes/Resources/Medkit.tres" id="3_sevgr"]
+[ext_resource type="Resource" uid="uid://bxa8hk70jsrtq" path="res://Scenes/Items/Medkit.tres" id="3_3ukt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5ord"]
 size = Vector2(10, 8)
@@ -13,7 +13,7 @@ size = Vector2(10, 8)
 [node name="PickupShadowSprite" parent="." instance=ExtResource("1_5n81r")]
 
 [node name="PickupComponent" parent="." instance=ExtResource("1_kk5bx")]
-item = ExtResource("3_sevgr")
+item = ExtResource("3_3ukt8")
 
 [node name="Sprite2D" type="Sprite2D" parent="PickupComponent"]
 texture = ExtResource("2_3htxa")
