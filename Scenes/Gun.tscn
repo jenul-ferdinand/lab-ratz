@@ -14,3 +14,4 @@ texture = ExtResource("2_bl6jf")
 [node name="ShootingPoint" type="Marker2D" parent="Sprite"]
 unique_name_in_owner = true
 position = Vector2(14, -2)
+gizmo_extents = 1.5
