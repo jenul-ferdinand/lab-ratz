@@ -1,8 +1,6 @@
 class_name FiniteStateMachine
 extends Node
 
-
-
 # Properties
 @export var state: State
 

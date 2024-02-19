@@ -6,8 +6,10 @@ var can_shoot : bool = true
 var shoot_delay : float = 0.13
 # Shooting delay timer
 var timer : Timer
-
-
+# Applying recoil
+var apply_recoil = false
+# Define knockback vector
+var knockback_vector; 
 
 # ENGINE FUNCTION: Called when the node enters the scene
 func _ready():
@@ -40,12 +42,7 @@ func _process(_delta):
 	$Sprite.scale.y = -1 if mouse_position.x < position.y else 1
 	
 	# Flipping the shooting point based on gun
-	#$ShootingPoint.position.y 
-	if $Sprite.flip_v == true:
-		%ShootingPoint.position.y = +2
-	else:
-		%ShootingPoint.position.y = -2
-
+	%ShootingPoint.position.y = +2 if $Sprite.flip_v else -2
 		
 	# Handle shooting input 
 	if Input.is_action_pressed("shoot") && can_shoot:
@@ -55,9 +52,23 @@ func _process(_delta):
 
 		# Disable shooting until timer has timed out
 		can_shoot = false
+		
+		# Recoil
+		apply_recoil = true
+		
+		# Set knockback vector for recoil
+		knockback_vector = (global_position - get_global_mouse_position()) * 0.1
 
-		# Start the timer
+		# Start the shoot delay timer
 		timer.start()
+	
+	# Apply recoil
+	if apply_recoil:
+		# Interpolate knockback vector
+		knockback_vector = lerp(knockback_vector, Vector2.ZERO, 0.1)
+		
+		# Set position to knockback vector
+		position = knockback_vector
 
 
 
@@ -65,6 +76,12 @@ func _process(_delta):
 func on_timeout():
 	# We can shoot again
 	can_shoot = true
+	
+	# No recoil
+	apply_recoil = false
+	
+	# Reset gun position to original position
+	position = Vector2.ZERO
 
 
 
