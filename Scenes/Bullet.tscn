@@ -11,7 +11,7 @@ height = 12.0
 top_level = true
 script = ExtResource("1_loyqf")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." groups=["projectile"]]
 position = Vector2(1.19209e-07, -2.01948e-28)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_t23fr")

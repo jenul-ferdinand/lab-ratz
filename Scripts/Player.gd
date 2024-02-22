@@ -1,22 +1,33 @@
+# Player (CharacterBody2D)
+# 
+# The player is a CharacterBody2D which can be controlled by the user via
+# Keyboard input
 extends CharacterBody2D
 class_name Player
+
+
 
 # Normal moving speed
 var movespeed : float = 68.0
 # Health points 
 var hp : int = 50
 var max_hp : int = 100
+
+
+
 # Signal for when health is changed
 signal health_changed
 
-# FUNCTION: Called when the node enters the scene
+
+
+# ENGINE FUNCTION: Called when the node enters the scene
 func _ready():
 	# Add to the player group
 	self.add_to_group("player")
 
 
 
-# FUNCTION: Called every frame
+# ENGINE FUNCTION: Called every frame
 func _physics_process(_delta):
 	# Declare motion vector
 	var motion = Vector2()
@@ -48,7 +59,7 @@ func _physics_process(_delta):
 
 
 
-# FUNCTION: Increase player health points
+# HELPER FUNCTION: Increase player health points
 func increase_health(amount: int):
 	hp += amount
 

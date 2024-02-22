@@ -1,4 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://ektd51baumvu"]
+[gd_scene load_steps=3 format=3 uid="uid://ektd51baumvu"]
+
+[sub_resource type="GDScript" id="GDScript_cs3uh"]
+script/source = "# HitboxComponent
+extends Area2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3l0l"]
 radius = 8.0
@@ -6,6 +24,7 @@ height = 23.78
 
 [node name="HitboxComponent" type="Area2D"]
 position = Vector2(0, -15.89)
+script = SubResource("GDScript_cs3uh")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)

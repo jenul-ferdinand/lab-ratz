@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_paygb"]
 [ext_resource type="PackedScene" uid="uid://duxkhs4rmiy1f" path="res://Scenes/PlayerShadowSprite.tscn" id="2_84o6d"]
 [ext_resource type="Texture2D" uid="uid://8jlrq4dreap6" path="res://Assets/Sprites/Characters/spr_hazmat_run_strip3.png" id="2_noqbu"]
+[ext_resource type="PackedScene" uid="uid://ektd51baumvu" path="res://Scenes/Components/HitboxComponent.tscn" id="4_8khew"]
 [ext_resource type="PackedScene" uid="uid://c5l31tvq4om7a" path="res://Scenes/Gun.tscn" id="4_h3m1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7y32"]
@@ -37,9 +38,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r241"]
-size = Vector2(15, 23)
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(312, 134)
 script = ExtResource("1_paygb")
@@ -57,12 +55,7 @@ animation = &"running"
 speed_scale = 1.5
 offset = Vector2(0, -16)
 
-[node name="HitboxComponent" type="Area2D" parent="."]
+[node name="HitboxComponent" parent="." groups=["ignore"] instance=ExtResource("4_8khew")]
 position = Vector2(0, -15.89)
-
-[node name="Collision" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(0.5, 5.39)
-shape = SubResource("RectangleShape2D_4r241")
-debug_color = Color(0.984314, 0, 0.352941, 0.419608)
 
 [node name="Gun" parent="." instance=ExtResource("4_h3m1y")]

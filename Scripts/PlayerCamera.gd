@@ -1,9 +1,12 @@
+# PlayerCamera (Camera2D)
 extends Camera2D
+
 
 
 # FUNCTION: Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+
 
 
 # FUNCTION: Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,3 +15,5 @@ func _process(_delta):
 	var player : CharacterBody2D = get_node("../Player")
 	if (player != null):
 		position = player.position
+
+

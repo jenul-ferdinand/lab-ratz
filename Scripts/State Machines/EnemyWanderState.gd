@@ -34,6 +34,9 @@ func _enter_state() -> void:
 func _exit_state() -> void: 
 	set_physics_process(false)
 
+	# Stop animating
+	animator.stop()
+
 
 
 # FUNCTION: Called every frame

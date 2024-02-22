@@ -11,7 +11,7 @@ signal lost_player
 
 
 
-# FUNCTION: When the node enters the scene
+# ENGINE FUNCTION: When the node enters the scene
 func _ready() -> void: 
 	set_physics_process(false)
 
@@ -21,6 +21,7 @@ func _ready() -> void:
 func _enter_state() -> void:
 	set_physics_process(true)
 	
+	# Play running animation
 	animator.play("running")
 
 
@@ -29,15 +30,18 @@ func _enter_state() -> void:
 func _exit_state() -> void:
 	set_physics_process(false)
 
+	# Stop animation
+	animator.stop()
 
 
-# FUNCTION: Called every frame
+
+# ENGINE FUNCTION: Called every frame
 func _physics_process(delta) -> void:
 	# Flipping sprite based on sign of velocity x
 	animator.scale.x = sign(actor.velocity.x)
 	if animator.scale.x == 0.0: animator.scale.x = 1.0
 	
-	# Move towards the mouse
+	# Move towards the target
 	var direction = Vector2.ZERO.direction_to(vision_cast.target_position)
 	actor.velocity = actor.velocity.move_toward(direction * actor.max_speed, actor.acceleration * delta)
 	actor.move_and_slide()

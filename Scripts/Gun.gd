@@ -1,4 +1,7 @@
+# Gun (StaticBody2D)
 extends StaticBody2D
+
+
 
 # Determines if the gun can shoot
 var can_shoot : bool = true
@@ -10,6 +13,8 @@ var timer : Timer
 var apply_recoil = false
 # Define knockback vector
 var knockback_vector; 
+
+
 
 # ENGINE FUNCTION: Called when the node enters the scene
 func _ready():
@@ -93,6 +98,9 @@ func shoot():
 	
 	# Create an instance of the bullet scene
 	var new_bullet = BULLET.instantiate()
+
+	# Set the creator of the bullet as the holder of the gun
+	new_bullet.creator = get_parent()
 	
 	# Set the global position as the ShootingPoint of the gun
 	new_bullet.global_position = %ShootingPoint.global_position

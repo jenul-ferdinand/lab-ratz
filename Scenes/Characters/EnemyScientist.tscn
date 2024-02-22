@@ -54,7 +54,8 @@ offset = Vector2(0, -16)
 position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_kmn3m")
 
-[node name="HitboxComponent" parent="." instance=ExtResource("2_cas7o")]
+[node name="HitboxComponent" parent="." groups=["enemy_hitbox"] instance=ExtResource("2_cas7o")]
+script = null
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("3_182in")

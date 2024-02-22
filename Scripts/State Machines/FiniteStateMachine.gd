@@ -15,7 +15,12 @@ func _ready():
 
 # FUNCTION: Called when we want to change states
 func change_state(new_state: State):
+	# Exit the state first 
 	if state is State:
 		state._exit_state()
+
+	# Then enter that state
 	new_state._enter_state()
+
+	# And set state to new state
 	state = new_state
